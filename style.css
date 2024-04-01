@@ -1,7 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
+:root{
+  --fill-color: hsl(0, 0%, 98%);
+}
+
 body{
   padding: 0;
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
+
+  background-repeat: no-repeat;
+  background-position: top;
+  /*background-size is hardcoded image resolution and must be changed if image with different resolution is used as background*/
+  background-image: url('../img/bg-desktop-light.jpg');
+  background-size: max(1440px, 100%) 300px;
+}
+h1, h2, h3, h4, h5, h6{
+  margin: 0;
+}
+
+#wrapper{
+  max-width: 540px;
+  margin: auto;
+  padding: 1rem;
 }
