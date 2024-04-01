@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root{
-  --fill-color: hsl(0, 0%, 98%);
+  --fill-color:hsl(0, 0%, 98%);
+  --passive-color:hsl(234, 39%, 85%);
+  --hover-color:hsl(236, 33%, 92%);
 }
 
 body{
@@ -18,9 +20,18 @@ body{
 h1, h2, h3, h4, h5, h6{
   margin: 0;
 }
+input{
+  all: unset;
+}
 
 #wrapper{
   max-width: 540px;
   margin: auto;
   padding: 1rem;
+}
+.box{
+  background-color: var(--fill-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .35);
+  margin-bottom: 1.5rem;
+  border-radius: .25rem;
 }

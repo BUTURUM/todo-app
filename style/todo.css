@@ -1,0 +1,16 @@
+.add-todo{
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 1rem;
+}
+.add-todo__input{
+  color: var(--dark-color);
+  flex: auto;
+}
+.add-todo__figure{
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  border: solid 1px var(--passive-color);
+}
