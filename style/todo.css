@@ -14,7 +14,7 @@
   flex: auto;
 }
 .todo-item__title{
-  text-overflow: ellipsis;
+  word-break: break-all;
 }
 
 .add-todo__figure, .todo-switch, .todo-switch::before{
