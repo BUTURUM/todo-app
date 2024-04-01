@@ -15,8 +15,11 @@
   export default {
     methods: {
       submit(){
+        if(!this.title.length){
+          return
+        }
         this.$emit('add-item', this.title);
-        this.title = ''
+        this.title = '';
       }
     },
     data(){
