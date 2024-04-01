@@ -1,16 +1,42 @@
 <template>
   <div id="wrapper">
-    <Header></Header>
-    <AddTodo @add-item="console.log($event)"/>
+    <Header />
+    <AddTodo @add-item="addItem"/>
+    <div class="show-todo box">
+      <TodoItem
+        v-for="todo in items"
+        :key="todo.id"
+        @switch="switchItem(todo.id)"
+        v-bind="todo"
+      />
+    </div>
   </div>
 </template>
 <script>
   import '../style/general.css';
-  import AddTodo from './Add-Todo.vue';
+  import '../style/todo.css';
 
+  import AddTodo from './Add-Todo.vue';
+  import TodoItem from './Todo-Item.vue';
   import Header from './Header.vue';
 
   export default {
-    components: { Header, AddTodo }
+    data(){
+      return {
+        items: [], lastId: 0
+      }
+    },
+    methods: {
+      addItem(title){
+        this.items.unshift({
+          title, status: false, id: this.lastId++
+        })
+      },
+      switchItem(id){
+        let todo = this.items.find(item => item.id === id);
+        todo.checked = !todo.checked;
+      }
+    },
+    components: { Header, AddTodo, TodoItem }
   }
 </script>

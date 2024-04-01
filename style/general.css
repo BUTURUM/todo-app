@@ -3,6 +3,7 @@
 :root{
   --fill-color:hsl(0, 0%, 98%);
   --passive-color:hsl(234, 39%, 85%);
+  --brand-gradient: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   --hover-color:hsl(236, 33%, 92%);
 }
 
@@ -20,7 +21,7 @@ body{
 h1, h2, h3, h4, h5, h6{
   margin: 0;
 }
-input{
+input, button{
   all: unset;
 }
 

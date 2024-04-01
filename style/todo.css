@@ -1,16 +1,59 @@
-.add-todo{
+.show-todo > :not(:last-child){
+  border-bottom: solid 1px var(--passive-color);
+}
+.add-todo, .todo-item{
   display: flex;
-  align-items: stretch;
   gap: 1rem;
   padding: 1rem;
 }
-.add-todo__input{
+.todo-item{
+  align-items: center;
+}
+.add-todo__input, .todo-item__title{
   color: var(--dark-color);
   flex: auto;
 }
-.add-todo__figure{
+.todo-item__title{
+  text-overflow: ellipsis;
+}
+
+.add-todo__figure, .todo-switch, .todo-switch::before{
   width: 1.8rem;
   height: 1.8rem;
   border-radius: 50%;
+}
+.add-todo__figure, .todo-switch{
   border: solid 1px var(--passive-color);
+  flex-shrink: 0;
+}
+.todo-switch{
+  position: relative;
+  transition: border-color .2s linear;
+  cursor: pointer;
+}
+.todo-switch__icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transition: transform .2s linear;
+  user-select: none;
+  transform: translate(-50%, -50%) scale(0);
+}
+.todo-switch::before{
+  content: '';
+  display: inline-block;
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  transition: opacity .2s linear;
+  opacity: 0;
+}
+
+.todo-item[data-checked] .todo-switch{
+  border-color: transparent;
+}
+.todo-item[data-checked] .todo-switch__icon{
+  transform: translate(-50%, -50%) scale(1);
+}
+.todo-item[data-checked] .todo-switch::before{
+  opacity: 1;
 }
