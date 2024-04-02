@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root{
-  --fill-color:hsl(0, 0%, 98%);
-  --passive-color:hsl(234, 39%, 85%);
-  --brand-gradient: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-  --hover-color:hsl(236, 33%, 92%);
+  --fill-color:hsl(0, 0%, 100%);
+  --light-passive-color: hsl(252, 11%, 90%);
+  --dark-passive-color: hsl(240, 5%, 60%);
+
+  --ink-color: #494C6B;
+  --active-color: #3a7bfd;
+  --brand-gradient: linear-gradient(#57ddff, #c058f3);
 }
 
 body{
   padding: 0;
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
+  color: var(--ink-color);
 
   background-repeat: no-repeat;
   background-position: top;

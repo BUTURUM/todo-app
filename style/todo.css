@@ -1,5 +1,5 @@
 .show-todo > :not(:last-child){
-  border-bottom: solid 1px var(--passive-color);
+  border-bottom: solid 1px var(--light-passive-color);
 }
 .add-todo, .todo-item{
   display: flex;
@@ -10,7 +10,6 @@
   align-items: center;
 }
 .add-todo__input, .todo-item__title{
-  color: var(--dark-color);
   flex: auto;
 }
 .todo-item__title{
@@ -23,7 +22,7 @@
   border-radius: 50%;
 }
 .add-todo__figure, .todo-switch{
-  border: solid 1px var(--passive-color);
+  border: solid 1px var(--light-passive-color);
   flex-shrink: 0;
 }
 .todo-switch{
@@ -42,7 +41,7 @@
 .todo-switch::before{
   content: '';
   display: inline-block;
-  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background: var(--brand-gradient);
   transition: opacity .2s linear;
   opacity: 0;
 }
