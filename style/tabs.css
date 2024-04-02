@@ -1,0 +1,17 @@
+.tab-form{
+  display: flex;
+  justify-content: space-around;
+}
+.tab-option{
+  font-weight: bold;
+  padding: 1rem;
+  color: var(--dark-passive-color);
+  transition: color .15s linear;
+  cursor: pointer;
+}
+.tab-option:hover{
+  color: var(--ink-color);
+}
+.tab-option[data-current]{
+  color: var(--active-color);
+}
