@@ -7,6 +7,7 @@
         v-for="todo in items"
         :key="todo.id"
         @switch="switchItem(todo.id)"
+        @delete="removeItem(todo.id)"
         v-bind="todo"
       />
     </div>
@@ -35,6 +36,9 @@
       switchItem(id){
         let todo = this.items.find(item => item.id === id);
         todo.checked = !todo.checked;
+      },
+      removeItem(id){
+        this.items.splice(this.items.findIndex(item => item.id === id), 1)
       }
     },
     components: { Header, AddTodo, TodoItem }

@@ -29,7 +29,6 @@
 .todo-switch{
   position: relative;
   transition: border-color .2s linear;
-  cursor: pointer;
 }
 .todo-switch__icon{
   position: absolute;

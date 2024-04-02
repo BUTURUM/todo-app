@@ -24,11 +24,21 @@ h1, h2, h3, h4, h5, h6{
 input, button{
   all: unset;
 }
+button{
+  cursor: pointer;
+}
 
 #wrapper{
   max-width: 540px;
   margin: auto;
   padding: 1rem;
+}
+.icon-btn{
+  display: flex;
+  align-items: center;
+}
+.icon-btn > :is(img, svg){
+  width: 1rem;
 }
 .box{
   background-color: var(--fill-color);
