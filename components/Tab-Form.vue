@@ -1,5 +1,5 @@
 <template>
-  <div class="box tab-form">
+  <div class="tab-form">
     <slot></slot>
   </div>
 </template>

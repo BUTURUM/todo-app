@@ -1,7 +1,7 @@
 <template>
   <button
     class="todo-switch"
-    @click="$emit('switch')"
+    @click="$emit('toggle')"
   >
     <img class="todo-switch__icon" :src="iconUrl">
   </button>

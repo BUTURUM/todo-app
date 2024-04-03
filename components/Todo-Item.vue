@@ -1,8 +1,8 @@
 <template>
   <div class="todo-item" :data-checked="checked || null">
-    <Checkbox @switch="$emit('switch')"/>
+    <Checkbox @toggle="$emit('toggle')"/>
     <div class="todo-item__title">{{ title }}</div>
-    <button class="icon-btn" @click="$emit('delete')">
+    <button class="icon-btn" @click="$emit('remove')">
       <img :src="crossUrl">
     </button>
   </div>
