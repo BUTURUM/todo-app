@@ -25,6 +25,7 @@
   import TodoItem from './Todo-Item.vue';
 
   export default {
+    emits: ['toggle-id', 'remove-id'],
     props: {
       items: Array
     },

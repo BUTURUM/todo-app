@@ -19,6 +19,7 @@
   import crossUrl from '../img/icon-cross.svg?url';
 
   export default {
+    emits: ['toggle', 'remove'],
     props: {
       title: String, checked: Boolean
     },

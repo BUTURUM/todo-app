@@ -13,6 +13,7 @@
   import '../style/todo.css';
 
   export default {
+    emits: ['add-item'],
     methods: {
       submit(){
         if(!this.title.length){
