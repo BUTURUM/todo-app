@@ -1,10 +1,10 @@
 <template>
+  <TabForm class="box" v-model="mode">
+    <TabOption label="All" value="show-all"/>
+    <TabOption label="Active" value="show-active"/>
+    <TabOption label="Completed" value="show-completed"/>
+  </TabForm>
   <div class="box show-todo">
-    <TabForm v-model="mode">
-      <TabOption label="All" value="show-all"/>
-      <TabOption label="Active" value="show-active"/>
-      <TabOption label="Completed" value="show-completed"/>
-    </TabForm>
     <TodoItem
       v-for="({title, checked, id}) in items"
       v-show="mode === 'show-all' || (mode == 'show-completed' ? checked : !checked)"
