@@ -6,13 +6,14 @@
       <TabOption label="Completed" value="show-completed"/>
     </TabForm>
     <TodoItem
-      v-for="item in items"
-      v-show="mode === 'show-all' || (mode == 'show-completed' ? item.checked : !item.checked)"
-      v-bind="item"
-      :key="item.id"
+      v-for="({title, checked, id}) in items"
+      v-show="mode === 'show-all' || (mode == 'show-completed' ? checked : !checked)"
+      :title="title"
+      :checked="checked"
+      :key="id"
 
-      @toggle="$emit('toggle-id', item.id)"
-      @remove="$emit('remove-id', item.id)"
+      @toggle="$emit('toggle-id', id)"
+      @remove="$emit('remove-id', id)"
     />
   </div>
 </template>

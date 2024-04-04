@@ -24,7 +24,7 @@
     methods: {
       addItem(title){
         this.items.unshift({
-          title, status: false, id: this.lastId++
+          title, checked: false, id: this.lastId++
         });
       },
       toggleItem(id){
