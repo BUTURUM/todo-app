@@ -4,27 +4,25 @@
       class="todo-switch"
       @click="$emit('toggle')"
     >
-      <img class="todo-switch__icon" :src="checkUrl">
+      <CheckIcon class="todo-switch__icon" />
     </button>
     <div class="todo-item__title">{{ title }}</div>
-    <button class="icon-btn" @click="$emit('remove')">
-      <img :src="crossUrl">
+    <button class="icon-static-btn" @click="$emit('remove')">
+      <MinusIcon />
     </button>
   </div>
 </template>
 <script>
   import '../style/todo.css';
 
-  import checkUrl from '../img/icon-check.svg?url';
-  import crossUrl from '../img/icon-cross.svg?url';
+  import CheckIcon from '../img/bx-check.svg';
+  import MinusIcon from '../img/bx-minus.svg';
 
   export default {
     emits: ['toggle', 'remove'],
     props: {
       title: String, checked: Boolean
     },
-    data(){
-      return { crossUrl, checkUrl }
-    }
+    components: {CheckIcon, MinusIcon}
   }
 </script>

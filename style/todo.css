@@ -34,8 +34,8 @@
   top: 50%;
   left: 50%;
   width: 50%;
+  fill: var(--fill-color);
   transition: transform .2s linear;
-  user-select: none;
   transform: translate(-50%, -50%) scale(0);
 }
 .todo-switch::before{

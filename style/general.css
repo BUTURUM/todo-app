@@ -31,18 +31,35 @@ input, button{
 button{
   cursor: pointer;
 }
+img{
+  user-select: none;
+}
 
 #wrapper{
   max-width: 540px;
   margin: auto;
   padding: 1rem;
 }
-.icon-btn{
-  display: flex;
-  align-items: center;
+.icon-animated-btn, .icon-static-btn{
+  padding: .25rem;
+  color: var(--ink-color);
+  border-radius: 50%;
 }
-.icon-btn > :is(img, svg){
-  width: 1rem;
+:is(.icon-animated-btn, .icon-static-btn) > svg{
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
+  fill: currentColor;
+}
+.icon-animated-btn{
+  transition: all .15s;
+}
+.icon-animated-btn:hover{
+  background: var(--ink-color);
+  color: var(--fill-color);
+}
+.icon-animated-btn:active{
+  scale: 1.5;
 }
 .box{
   background-color: var(--fill-color);
