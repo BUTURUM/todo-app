@@ -32,7 +32,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 50%;
+  width: 75%;
   fill: var(--fill-color);
   transition: transform .2s linear;
   transform: translate(-50%, -50%) scale(0);
