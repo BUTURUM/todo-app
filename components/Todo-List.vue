@@ -4,7 +4,7 @@
     <TabOption label="Active" value="show-active"/>
     <TabOption label="Completed" value="show-completed"/>
   </TabForm>
-  <div class="box show-todo">
+  <ul class="box show-todo">
     <TodoItem
       v-for="({title, checked, id}) in items"
       v-show="mode === 'show-all' || (mode == 'show-completed' ? checked : !checked)"
@@ -15,7 +15,7 @@
       @toggle="$emit('toggle-id', id)"
       @remove="$emit('remove-id', id)"
     />
-  </div>
+  </ul>
 </template>
 <script>
   import '../style/todo.css';

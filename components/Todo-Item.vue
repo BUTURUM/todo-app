@@ -1,5 +1,5 @@
 <template>
-  <div class="todo-item" :data-checked="checked || null">
+  <li class="todo-item" :data-checked="checked || null">
     <button
       class="todo-switch"
       @click="$emit('toggle')"
@@ -10,7 +10,7 @@
     <button class="icon-static-btn" @click="$emit('remove')">
       <MinusIcon />
     </button>
-  </div>
+  </li>
 </template>
 <script>
   import '../style/todo.css';
