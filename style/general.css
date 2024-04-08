@@ -10,6 +10,8 @@
   --ink-color: #494c6b;
   --active-color: #3a7bfd;
   --brand-gradient: linear-gradient(#57ddff, #c058f3);
+
+  -webkit-tap-highlight-color: transparent;
 }
 :root.dark-theme{
   --fill-color: hsl(235, 24%, 19%);
@@ -71,16 +73,20 @@ ul{
 .icon-animated-btn{
   transition: all .15s;
 }
-.icon-animated-btn:hover{
-  background: var(--active-color);
-  color: var(--bright-color);
-}
 .icon-animated-btn:active{
   scale: 1.5;
+  background: var(--active-color);
+  color: var(--bright-color);
 }
 .box{
   background-color: var(--fill-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, .35);
   margin-bottom: 1.5rem;
   border-radius: .25rem;
+}
+@media (hover: hover){
+  .icon-animated-btn:hover{
+    background: var(--active-color);
+    color: var(--bright-color);
+  }
 }

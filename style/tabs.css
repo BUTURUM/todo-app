@@ -11,8 +11,10 @@
   cursor: pointer;
   user-select: none;
 }
-.tab-option:hover{
-  color: var(--ink-color);
+@media (hover: hover){
+  .tab-option:hover{
+    color: var(--ink-color);
+  }
 }
 .tab-option[data-current]{
   color: var(--active-color);
