@@ -1,4 +1,4 @@
-import { reactive, watch } from "vue";
+import { ref, watch } from "vue";
 
 function syncStorage(key, reactiveObject){
   watch(reactiveObject, (newStorage) => {
@@ -8,18 +8,18 @@ function syncStorage(key, reactiveObject){
   });
   return reactiveObject;
 };
-export default function(key, defaultObject = {}, {validator = () => true}){
+export default function(key, defaultValue, {validator = () => true}){
   let rawData = window.localStorage.getItem(key);
   if(!rawData){
-    return syncStorage(key, reactive(defaultObject));
+    return syncStorage(key, ref(defaultValue));
   }
   try{
     rawData = JSON.parse(rawData);
   } catch{
-    return syncStorage(key, reactive(defaultObject));
+    return syncStorage(key, ref(defaultValue));
   }
   if(!validator(rawData)){
-    return syncStorage(key, reactive(defaultObject));
+    return syncStorage(key, ref(defaultValue));
   }
-  return syncStorage(key, reactive(rawData));
+  return syncStorage(key, ref(rawData));
 };

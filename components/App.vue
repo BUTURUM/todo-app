@@ -8,6 +8,7 @@
   </div>
 </template>
 <script setup>
+  import { reactive } from 'vue';
   import useStorage from '../useStorage.js';
 
   import '../style/general.css';
@@ -30,9 +31,9 @@
     storage.items.splice(storage.items.findIndex(item => item.id === id), 1);
   }
 
-  let storage = useStorage('storage', {items: [], lastId: 0}, function validator(object){
+  let storage = reactive(useStorage('storage', {items: [], lastId: 0}, function validator(object){
     return (
       typeof object === 'object' && object && Array.isArray(object.items) && typeof object.lastId === 'number'
     )
-  });
+  }).value);
 </script>

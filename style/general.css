@@ -2,11 +2,22 @@
 
 :root{
   --fill-color:hsl(0, 0%, 100%);
+  --bright-color: hsl(0, 0%, 100%);
   --light-passive-color: hsl(252, 11%, 90%);
   --dark-passive-color: hsl(240, 5%, 60%);
+  --back-color: hsl(0, 0%, 92%);
 
-  --ink-color: #494C6B;
+  --ink-color: #494c6b;
   --active-color: #3a7bfd;
+  --brand-gradient: linear-gradient(#57ddff, #c058f3);
+}
+:root.dark-theme{
+  --fill-color: hsl(235, 24%, 19%);
+  --light-passive-color: hsl(233, 14%, 30%);
+  --dark-passive-color: hsl(234, 11%, 50%);
+  --back-color: hsl(235, 21%, 11%);
+
+  --ink-color: #d9dbf2;
   --brand-gradient: linear-gradient(#57ddff, #c058f3);
 }
 
@@ -18,9 +29,13 @@ body{
 
   background-repeat: no-repeat;
   background-position: top;
+  background-color: var(--back-color);
   /*background-size is hardcoded image resolution and must be changed if image with different resolution is used as background*/
   background-image: url('../img/bg-desktop-light.jpg');
   background-size: max(1440px, 100%) 300px;
+}
+:root.dark-theme body{
+  background-image: url('../img/bg-desktop-dark.jpg');
 }
 h1, h2, h3, h4, h5, h6{
   margin: 0;
@@ -57,8 +72,8 @@ ul{
   transition: all .15s;
 }
 .icon-animated-btn:hover{
-  background: var(--ink-color);
-  color: var(--fill-color);
+  background: var(--active-color);
+  color: var(--bright-color);
 }
 .icon-animated-btn:active{
   scale: 1.5;
