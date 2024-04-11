@@ -5,7 +5,7 @@
     <TabOption label="Completed" value="show-completed"/>
   </TabForm>
   <ul class="box show-todo">
-    <template v-for="({title, checked, id}) in items">
+    <template v-if="items.length" v-for="({title, checked, id}) in items">
       <TodoItem
         v-if="mode === 'show-all' || (mode == 'show-completed' ? checked : !checked)"
         :title="title"
@@ -16,6 +16,9 @@
         @remove="$emit('remove-id', id)"
       />
     </template>
+    <div v-else class="list-holder">
+      <span class="list-holder__note"></span>
+    </div>
   </ul>
 </template>
 <script>

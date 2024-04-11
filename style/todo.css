@@ -1,6 +1,17 @@
 .show-todo > :not(:last-child){
   border-bottom: solid 1px var(--light-passive-color);
 }
+
+.list-holder{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+.list-holder__note{
+  color: var(--dark-passive-color);
+}
+
 .add-todo, .todo-item{
   display: flex;
   gap: 1rem;
